@@ -19,11 +19,13 @@ class SparseLinear:
         self.ucols, self.starts = np.unique(self.cols, return_index=True)
         self.b, self.fan_out, self.nnz = b.copy(), W.shape[1], len(self.vals)
 
-    def __call__(self, x):
-        out = np.broadcast_to(self.b, (x.shape[0], self.fan_out)).copy()
+    def __call__(self, xT):
+        """Feature-major layout: xT is (fan_in, B) so each gathered row is contiguous."""
+        out = np.repeat(self.b[:, None], xT.shape[1], axis=1)
         if self.nnz:
-            prod = x[:, self.rows] * self.vals                   # B x nnz multiplies
-            out[:, self.ucols] += np.add.reduceat(prod, self.starts, axis=1)  # B x nnz adds
+            prod = xT[self.rows]                                               # gather active inputs
+            np.multiply(prod, self.vals[:, None], out=prod)                    # nnz x B multiplies
+            out[self.ucols] += np.add.reduceat(prod, self.starts, axis=0)      # nnz x B adds
         return out
 
 
@@ -59,11 +61,12 @@ class SparseMLP:
         self.blocks = [(SparseLinear(W, b), act) for W, b, act in compact(model)]
 
     def __call__(self, x):
+        h = np.ascontiguousarray(x.T)
         for lin, act in self.blocks:
-            x = lin(x)
+            h = lin(h)
             if act is not None:
-                x = act(x)
-        return x
+                h = act(h)
+        return h.T
 
     def macs(self):
         return sum(lin.nnz for lin, _ in self.blocks)

@@ -1,0 +1,200 @@
+[
+  {
+    "target": 0.0,
+    "sparsity": 0.0,
+    "test_acc": 0.9805013927576601,
+    "params_total": 50826,
+    "params_active": 50826,
+    "macs_dense": 50432,
+    "macs_sparse": 50432,
+    "macs_compact": 50432,
+    "hidden_units": [
+      256,
+      128
+    ],
+    "bytes_dense": 406608,
+    "bytes_sparse": 816368,
+    "latency_us": {
+      "1": {
+        "dense": 15.755671386702419,
+        "compact": 15.198148925782418,
+        "sparse_csc": 169.08317187502854
+      },
+      "64": {
+        "dense": 195.59265429691663,
+        "compact": 201.39409765618234,
+        "sparse_csc": 38974.44499995117
+      },
+      "1024": {
+        "dense": 3674.111062501595,
+        "compact": 3368.2171562468,
+        "sparse_csc": 779070.2040000496
+      }
+    }
+  },
+  {
+    "target": 0.5,
+    "sparsity": 0.5,
+    "test_acc": 0.9832869080779945,
+    "params_total": 50826,
+    "params_active": 25610,
+    "macs_dense": 50432,
+    "macs_sparse": 25216,
+    "macs_compact": 47772,
+    "hidden_units": [
+      256,
+      118
+    ],
+    "bytes_dense": 406608,
+    "bytes_sparse": 412672,
+    "latency_us": {
+      "1": {
+        "dense": 15.04574999999786,
+        "compact": 14.629975585961352,
+        "sparse_csc": 100.43524804692616
+      },
+      "64": {
+        "dense": 215.45076562512477,
+        "compact": 208.13483398440803,
+        "sparse_csc": 18838.764000008723
+      },
+      "1024": {
+        "dense": 3811.625875002278,
+        "compact": 3510.781812501307,
+        "sparse_csc": 329057.2839999868
+      }
+    }
+  },
+  {
+    "target": 0.75,
+    "sparsity": 0.75,
+    "test_acc": 0.9749303621169917,
+    "params_total": 50826,
+    "params_active": 13002,
+    "macs_dense": 50432,
+    "macs_sparse": 12608,
+    "macs_compact": 42520,
+    "hidden_units": [
+      250,
+      102
+    ],
+    "bytes_dense": 406608,
+    "bytes_sparse": 210416,
+    "latency_us": {
+      "1": {
+        "dense": 16.58880932617346,
+        "compact": 14.91765747069218,
+        "sparse_csc": 71.44922851565205
+      },
+      "64": {
+        "dense": 202.4648359375547,
+        "compact": 191.76094726547353,
+        "sparse_csc": 7665.987875000724
+      },
+      "1024": {
+        "dense": 3508.211999999844,
+        "compact": 3091.0272500008773,
+        "sparse_csc": 137813.66399996387
+      }
+    }
+  },
+  {
+    "target": 0.9,
+    "sparsity": 0.9000039657360406,
+    "test_acc": 0.9832869080779945,
+    "params_total": 50826,
+    "params_active": 5437,
+    "macs_dense": 50432,
+    "macs_sparse": 5039,
+    "macs_compact": 27050,
+    "hidden_units": [
+      185,
+      78
+    ],
+    "bytes_dense": 406608,
+    "bytes_sparse": 87176,
+    "latency_us": {
+      "1": {
+        "dense": 13.596236450197363,
+        "compact": 12.206790649407772,
+        "sparse_csc": 42.2431596679429
+      },
+      "64": {
+        "dense": 216.25971093763852,
+        "compact": 133.5431015625499,
+        "sparse_csc": 813.3671718750791
+      },
+      "1024": {
+        "dense": 3237.7953125006798,
+        "compact": 2093.8983125020627,
+        "sparse_csc": 52636.96349999236
+      }
+    }
+  },
+  {
+    "target": 0.95,
+    "sparsity": 0.9500118972081218,
+    "test_acc": 0.9832869080779945,
+    "params_total": 50826,
+    "params_active": 2915,
+    "macs_dense": 50432,
+    "macs_sparse": 2445,
+    "macs_compact": 15383,
+    "hidden_units": [
+      137,
+      45
+    ],
+    "bytes_dense": 406608,
+    "bytes_sparse": 43728,
+    "latency_us": {
+      "1": {
+        "dense": 15.615160644522064,
+        "compact": 9.585453247071275,
+        "sparse_csc": 33.375502929644526
+      },
+      "64": {
+        "dense": 205.33693359370275,
+        "compact": 89.44346191408492,
+        "sparse_csc": 446.6345078126821
+      },
+      "1024": {
+        "dense": 3369.395156248345,
+        "compact": 1351.3467500008146,
+        "sparse_csc": 27077.142249993358
+      }
+    }
+  },
+  {
+    "target": 0.98,
+    "sparsity": 0.9799928616751269,
+    "test_acc": 0.9777158774373259,
+    "params_total": 50826,
+    "params_active": 1403,
+    "macs_dense": 50432,
+    "macs_sparse": 861,
+    "macs_compact": 6842,
+    "hidden_units": [
+      76,
+      23
+    ],
+    "bytes_dense": 406608,
+    "bytes_sparse": 16392,
+    "latency_us": {
+      "1": {
+        "dense": 14.842793212899164,
+        "compact": 9.341831176748471,
+        "sparse_csc": 27.340230957018097
+      },
+      "64": {
+        "dense": 208.61795312487885,
+        "compact": 47.46630664059781,
+        "sparse_csc": 186.31506640631733
+      },
+      "1024": {
+        "dense": 3177.426000000594,
+        "compact": 710.3611484380324,
+        "sparse_csc": 7930.5383749925795
+      }
+    }
+  }
+]
